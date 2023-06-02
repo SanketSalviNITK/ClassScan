@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Attendance</title>
+</head>
+<body>
+    <h1>Manual Attendance</h1>
+    <form action="/manual_attendance" method="POST">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time"><br><br>
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course"><br><br>
+        <label for="student">Student:</label>
+        <select id="student" name="student">
+            {% for student in students %}
+            <option value="{{ student }}">{{ student }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select><br><br>
+        <input type="submit" value="Mark Attendance">
+    </form>
+</body>
+</html>

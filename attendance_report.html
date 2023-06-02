@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+</head>
+<body>
+    <h1>Attendance Report</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Course</th>
+            <th>Status</th>
+        </tr>
+        {% for attendance in attendance_report %}
+        <tr>
+            <td>{{ attendance.date }}</td>
+            <td>{{ attendance.time }}</td>
+            <td>{{ attendance.course }}</td>
+            <td>{{ attendance.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
